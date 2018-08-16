@@ -28,53 +28,62 @@
 	window.menu = '${title}';
 </script>
 
+
+
+
+
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
+<!-- Bootstrap Theme CSS -->
+<link href="${css}/bootstrap.readable.css" rel="stylesheet">
+
 <!-- Custom styles for this template -->
 <link href="${css}/shop-homepage.css" rel="stylesheet">
+
+
 
 </head>
 
 <body>
 
-	<!-- Navigation -->
-	<%@include file="./shared/navbar.jsp"%>
+	<div class="wrapper">
+		<!-- Navigation -->
+		<%@include file="./shared/navbar.jsp"%>
 
 
 
-	<!-- Page Content Home-->
-	<!-- load only when user clicks home-->
-	<c:if test="${userClickHome==true}">
-		<%@include file="./shared/home.jsp"%>
-	</c:if>
+		<!-- Page Content Home-->
+		<div class="content">
+			<!-- load only when user clicks home-->
+			<c:if test="${userClickHome==true}">
+				<%@include file="./shared/home.jsp"%>
+			</c:if>
 
 
-	<!-- load only when user clicks About-->
-	<c:if test="${userClickAbout==true}">
-		<%@include file="about.jsp"%>
-	</c:if>
+			<!-- load only when user clicks About-->
+			<c:if test="${userClickAbout==true}">
+				<%@include file="about.jsp"%>
+			</c:if>
 
-	<!-- load only when user clicks Contact-->
-	<c:if test="${userClickContact==true}">
-		<%@include file="contact.jsp"%>
-	</c:if>
-
-
-
-
-
-	<!-- Footer -->
-	<%@include file="./shared/footer.jsp"%>
+			<!-- load only when user clicks Contact-->
+			<c:if test="${userClickContact==true}">
+				<%@include file="contact.jsp"%>
+			</c:if>
+		</div>
+		<!-- Footer -->
+		<%@include file="./shared/footer.jsp"%>
 
 
-	<!-- Bootstrap core JavaScript -->
-	<script src="${js}/jquery.min.js"></script>
-	<script src="${js}/bootstrap.bundle.min.js"></script>
-	
-	
-	<!-- custom jsp by the developer -->
-	<script src="${js}/myApp.js"></script>
+		<!-- Bootstrap core JavaScript -->
+		<script src="${js}/jquery.min.js"></script>
+		<script src="${js}/bootstrap.bundle.min.js"></script>
+
+
+		<!-- custom jsp by the developer -->
+		<script src="${js}/myApp.js"></script>
+
+	</div>
 </body>
 
 </html>
