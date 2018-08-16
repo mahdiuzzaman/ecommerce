@@ -22,7 +22,11 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Ecommerce - ${title} </title>
+<title>Ecommerce - ${title}</title>
+
+<script type="text/javascript">
+	window.menu = '${title}';
+</script>
 
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
@@ -44,13 +48,13 @@
 	<c:if test="${userClickHome==true}">
 		<%@include file="./shared/home.jsp"%>
 	</c:if>
-	
-	
+
+
 	<!-- load only when user clicks About-->
 	<c:if test="${userClickAbout==true}">
 		<%@include file="about.jsp"%>
 	</c:if>
-	
+
 	<!-- load only when user clicks Contact-->
 	<c:if test="${userClickContact==true}">
 		<%@include file="contact.jsp"%>
@@ -67,7 +71,10 @@
 	<!-- Bootstrap core JavaScript -->
 	<script src="${js}/jquery.min.js"></script>
 	<script src="${js}/bootstrap.bundle.min.js"></script>
-
+	
+	
+	<!-- custom jsp by the developer -->
+	<script src="${js}/myApp.js"></script>
 </body>
 
 </html>
