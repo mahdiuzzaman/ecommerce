@@ -57,7 +57,7 @@
 		<div class="content">
 			<!-- load only when user clicks home-->
 			<c:if test="${userClickHome==true}">
-				<%@include file="./shared/home.jsp"%>
+				<%@include file="home.jsp"%>
 			</c:if>
 
 
@@ -70,6 +70,15 @@
 			<c:if test="${userClickContact==true}">
 				<%@include file="contact.jsp"%>
 			</c:if>
+			
+			
+			<!-- load only when user clicks category or all-->
+			<c:if test="${userClickCategoryProducts==true or userClickAllProducts==true}">
+				<%@include file="listProduct.jsp"%>
+			</c:if>
+			
+			
+			
 		</div>
 		<!-- Footer -->
 		<%@include file="./shared/footer.jsp"%>
