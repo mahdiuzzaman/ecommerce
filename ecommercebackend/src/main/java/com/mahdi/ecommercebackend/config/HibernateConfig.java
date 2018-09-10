@@ -18,7 +18,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 public class HibernateConfig {
 	private final String db_url = "jdbc:mysql://localhost:3306/hb_student_tracker?useSSL=false";
-	private final String db_driver = "com.mysql.jdbc.Driver";
+	private final String db_driver = "com.mysql.cj.jdbc.Driver";
 	private final String db_dialect = "org.hibernate.dialect.MySQLDialect";
 	private final String db_username = "hbstudent";
 	private final String db_password = "hbstudent";
@@ -63,7 +63,7 @@ public class HibernateConfig {
 	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) {
 
 		HibernateTransactionManager hibernateTransactionManager = new HibernateTransactionManager(sessionFactory);
-
+		
 		return hibernateTransactionManager;
 
 	}
