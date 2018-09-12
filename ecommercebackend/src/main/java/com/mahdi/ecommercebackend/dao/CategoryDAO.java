@@ -9,9 +9,15 @@ import com.mahdi.ecommercebackend.dto.Category;
 
 public interface CategoryDAO {
 	
-	//method
-	boolean add(Category category);
-	List<Category> list();
+	//get category by id
 	Category get(int id);
+	
+	//its returs a list of category
+	List<Category> list();
+	
+	//return true if a category is added to the database
+	boolean add(Category category);
+	boolean update(Category category);
+	boolean delete(Category category);	
     
 }
