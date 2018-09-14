@@ -12,58 +12,56 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name="product")
+@Table(name = "product")
 public class Product {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private int id;
-	
-	@Column(name="code")
+
+	@Column(name = "code")
 	private String code;
-	
-	@Column(name="name")
+
+	@Column(name = "name")
 	private String name;
-	
-	@Column(name="brand")
+
+	@Column(name = "brand")
 	private String brand;
-	
-	@Column(name="description")
+
+	@Column(name = "description")
 	@JsonIgnore
 	private String description;
-	
-	@Column(name="unit_price")
+
+	@Column(name = "unit_price")
 	private double unitPrice;
-	
-	@Column(name="quantity")
+
+	@Column(name = "quantity")
 	private int quantity;
-	
-	@Column(name="is_active")
+
+	@Column(name = "is_active")
 	@JsonIgnore
 	private boolean active;
-	
-	@Column(name="category_id")
+
+	@Column(name = "category_id")
 	@JsonIgnore
 	private int categoryId;
-	
-	@Column(name="supplier_id")
+
+	@Column(name = "supplier_id")
 	@JsonIgnore
 	private int supplier;
-	
-	@Column(name="purchases")
+
+	@Column(name = "purchases")
 	private int purchases;
-	
-	@Column(name="views")
+
+	@Column(name = "views")
 	private int views;
-	
-	
+
 	public Product() {
-		
-		this.code ="PRD" + UUID.randomUUID().toString().substring(26).toUpperCase();
-		
+
+		this.code = "PRD" + UUID.randomUUID().toString().substring(26).toUpperCase();
+
 	}
-	
 
 	public int getId() {
 		return id;
@@ -121,7 +119,6 @@ public class Product {
 		this.quantity = quantity;
 	}
 
-
 	public boolean isActive() {
 		return active;
 	}
@@ -161,8 +158,5 @@ public class Product {
 	public void setViews(int views) {
 		this.views = views;
 	}
-	
-	
-	
 
 }

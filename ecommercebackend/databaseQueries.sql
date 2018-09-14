@@ -16,9 +16,9 @@ CREATE TABLE category(
 INSERT into category
 (name, description, image_url, is_active )
 VALUES 
-('Television', 'Some des of tv', 'cat_1.png', true),
-('Mobile', 'Some des of Mobile', 'cat_2.png', true),
-('Laptop', 'Some des of laptop', 'cat_3.png', true);
+('Laptop', 'Some des of tv', 'cat_1.png', true),
+('Television', 'Some des of Mobile', 'cat_2.png', true),
+('Mobile', 'Some des of laptop', 'cat_3.png', true);
 
 
 CREATE TABLE user_detail (
