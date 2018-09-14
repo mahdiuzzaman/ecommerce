@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- scan="true" reloads configuration automatically -->
 <configuration>
 
 	<appender name="consoleAppender"
 		class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
-			<Pattern>%-5level %msg %d{HH:mm:ss.SSS} %logger{36} %n</Pattern>
+			<Pattern>%-5level %msg %d{HH:mm:ss.SSS} %logger{100} %n</Pattern>
 		</encoder>
 	</appender>
 
-
-	<logger name="com.mahdi" level="INFO">
+	<!--child logger/normal logger in hierarchy -->
+	<logger name="com.mahdi.ecommerce" level="DEBUG"
+		additivity="false">
+		<appender-ref ref="consoleAppender" />
+	</logger>
+	<!-- child logger/normal logger in hierarchy -->
+	<logger name="com.mahdi.ecommercebackend" level="DEBUG"
+		additivity="false">
+		<!-- additivity = "false" does not propagate the same message to root -->
 		<appender-ref ref="consoleAppender" />
 	</logger>
 
-	<root >
+	<!-- root logger of the hierarchy -->
+	<root level="INFO">
 		<appender-ref ref="consoleAppender" />
 	</root>
 
