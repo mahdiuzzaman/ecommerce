@@ -1,15 +1,15 @@
 package com.mahdi.ecommerce.controller;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.springframework.aop.ThrowsAdvice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.mahdi.ecommerce.exception.ProductNotFoundException;
 import com.mahdi.ecommercebackend.dao.CategoryDAO;
 import com.mahdi.ecommercebackend.dao.ProductDAO;
 import com.mahdi.ecommercebackend.dto.Category;
@@ -17,7 +17,7 @@ import com.mahdi.ecommercebackend.dto.Product;
 
 @Controller
 public class PageController {
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(PageController.class);
 
 	@Autowired
@@ -28,9 +28,9 @@ public class PageController {
 
 	@RequestMapping(value = { "/", "home", "index" })
 	public String index(Model model) {
-		
+
 		model.addAttribute("title", "Home");
-		
+
 		logger.info("Controller Method: index() -INFO ");
 		logger.debug("Controller Method: index() -DEBUG ");
 
@@ -86,8 +86,11 @@ public class PageController {
 	// controller for a single product
 
 	@RequestMapping("show/{id}/product")
-	public String showSinglePage(Model model, @PathVariable int id) {
+	public String showSinglePage(Model model, @PathVariable int id) throws ProductNotFoundException {
 		Product product = productDAO.get(id);
+		if (product == null) {
+			throw new ProductNotFoundException();
+		}
 		product.setViews(product.getViews() + 1);
 		// update view count
 		productDAO.update(product);
