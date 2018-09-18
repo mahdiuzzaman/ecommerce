@@ -21,6 +21,11 @@
 		<!-- additivity = "false" does not propagate the same message to root -->
 		<appender-ref ref="consoleAppender" />
 	</logger>
+	<logger name="org.hibernate.type.descriptor.sql.BasicBinder"
+		additivity="false" level="TRACE">
+		<level value="TRACE" />
+		<appender-ref ref="consoleAppender" />
+	</logger>
 
 	<!-- root logger of the hierarchy -->
 	<root level="INFO">

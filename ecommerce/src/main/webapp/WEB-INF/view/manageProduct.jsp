@@ -3,21 +3,21 @@
 
 <div class="container">
 
-<c:if test="${not empty message}">
-			<div class="row">
-				<div class="col-xs-12 col-md-12">
-					<div class="alert alert-success alert-dismisible">
-					<button type ="button"class="close" data-dismiss="alert">&#10006;</button>
+	<c:if test="${not empty message}">
+		<div class="row">
+			<div class="col-xs-12 col-md-12">
+				<div class="alert alert-success alert-dismisible">
+					<button type="button" class="close" data-dismiss="alert">&#10006;</button>
 					${message}
-					</div>
 				</div>
 			</div>
-		</c:if>
-		
-		
+		</div>
+	</c:if>
+
+
 	<div class="row">
 
-		
+
 		<div class="col-md-offset-2 col-md-8">
 			<div class="panel panel-primary">
 
@@ -26,7 +26,8 @@
 
 				<div class="panel-body">
 					<sf:form class="form-horizontal" modelAttribute="product"
-						action="${contextRoot}/manage/productadd" method="POST">
+						action="${contextRoot}/manage/productadd" method="POST"
+						enctype="multipart/form-data">
 
 
 						<div class="form-group">
@@ -79,13 +80,13 @@
 						</div>
 
 
-						<%-- <div class="form-group">
-						<label class="control-label col-md-4">Upload a file</label>
-						<div class="col-md-8">
-							<sf:input type="file" path="file" class="form-control" />
-							<sf:errors path="file" cssClass="help-block" element="em" />
+						<div class="form-group">
+							<label class="control-label col-md-4">Upload a file</label>
+							<div class="col-md-8">
+								<sf:input type="file" path="file" class="form-control" />
+								<sf:errors path="file" cssClass="help-block" element="em" />
+							</div>
 						</div>
-					</div> --%>
 
 
 						<div class="form-group">
@@ -120,4 +121,51 @@
 			</div>
 		</div>
 	</div>
-</div>
+
+
+	<div class="row">
+		<div class='col-xs-12'>
+			<table id="productsTable"
+				class="table table-condensed table-bordered">
+
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>&#160;</th>
+						<th>Name</th>
+						<th>Brand</th>
+						<th>Qty. Avail</th>
+						<th>Unit Price</th>
+						<th>Activate</th>
+						<th>Edit</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>4</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<th>Id</th>
+						<th>&#160;</th>
+						<th>Name</th>
+						<th>Brand</th>
+						<th>Qty. Avail</th>
+						<th>Unit Price</th>
+						<th>Activate</th>
+						<th>Edit</th>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+
+
+
+	</div>
