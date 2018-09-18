@@ -7,9 +7,17 @@ $(function() {
 	case 'Contact Us':
 		$('#contact').addClass('active');
 		break;
+	case 'All Product':
+		$('#productList').addClass('active');
+		break;
+	case 'Manage Product':
+		$('#manageProducts').addClass('active');
+		break;
 
 	default:
-		$('#home').addClass('active');
+		if (menu == "Home")
+			break;
+		$('#productList').addClass('active');
 		break;
 	}
 
@@ -105,5 +113,36 @@ $(function() {
 					]
 				});
 	}
-
+	
+	
+	//dissmiss the alert after 3 sesonde
+    var $alert = $('.alert')
+    
+    if($alert.length){
+    	setTimeout( function(){
+    		$alert.fadeOut('slow')
+    	}, 3000)
+    }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
