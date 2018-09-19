@@ -68,8 +68,9 @@ public class ProductDAOImpl implements ProductDAO {
 
 	@Override
 	public List<Product> list() {
-		// TODO Auto-generated method stub
-		return null;
+		String selectActiveProduct = "FROM Product";
+		Query query = sessionFactory.getCurrentSession().createQuery(selectActiveProduct, Product.class);
+		return query.getResultList();
 	}
 
 	@Override
