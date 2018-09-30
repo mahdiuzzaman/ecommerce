@@ -2,7 +2,6 @@ package com.mahdi.ecommerce.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.aop.ThrowsAdvice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,8 +30,8 @@ public class PageController {
 
 		model.addAttribute("title", "Home");
 
-		logger.info("Controller Method: index() -INFO ");
-		logger.debug("Controller Method: index() -DEBUG ");
+		//logger.info("Controller Method: index() -INFO ");
+		//logger.debug("Controller Method: index() -DEBUG ");
 
 		model.addAttribute("categories", categoryDao.list());
 

@@ -1,5 +1,6 @@
 package com.mahdi.ecommercebackend.test;
 
+import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.BeforeClass;
@@ -25,9 +26,10 @@ public class ProductTestCase {
 		productDAO = (ProductDAO) context.getBean("productDAO");
 	}
 
+	@Test
 	public void testCRUDProduct() {
 
-		product = new Product();
+		/*product = new Product();
 		product.setName("Galaxy s6");
 		product.setBrand("Samsung");
 		product.setDescription("This is some description for oppo mobile phones!");
@@ -56,21 +58,34 @@ public class ProductTestCase {
 		product.setCategoryId(3);
 		product.setSupplier(3);
 		assertEquals("Something went wrong while inserting a new product!", true, productDAO.add(product));
+*/
+		product = new Product();
+		System.out.println(product.toString());
+		product.setName("Selfie S53");
+		product.setBrand("Ghorar Dim");
+		product.setId(0);
+		assertEquals("Something went wrong while inserting a new product!", true, productDAO.add(product));
 
+		
+		
+		
+		
 		// reading and updating the category
-		product = productDAO.get(2);
-		product.setName("Samsung Galaxy S7");
-		assertEquals("Something went wrong while updating the existing record!", true, productDAO.update(product));
+		//product = productDAO.get(2);
+		//System.out.println(product.toString());
+		//product.setId(100);
+		//product.setName("Samsung Galaxy S7");
+		//System.out.println(product.toString());
+		//assertEquals("Something went wrong while updating the existing record!", true, productDAO.add(product));
 
-		assertEquals("Something went wrong while deleting the existing record!", true, productDAO.delete(product));
+		//assertEquals("Something went wrong while deleting the existing record!", true, productDAO.delete(product));
 
 		// list
-		assertEquals("Something went wrong while fetching the list of products!", 2,
-				productDAO.listActiveProducts().size());
+		//assertEquals("Something went wrong while fetching the list of products!", 2, productDAO.listActiveProducts().size());
 
 	}
 
-	@Test
+	/*@Test
 	public void testListActiveProducts() {
 		assertEquals("Error in fetching the list of products!", 5, productDAO.listActiveProducts().size());
 	}
@@ -85,6 +100,6 @@ public class ProductTestCase {
 	public void testGetLatestActiveProduct() {
 		assertEquals("Error in fetching the list of products!", 3, productDAO.getLatestActiveProduct(3).size());
 
-	}
+	}*/
 
 }

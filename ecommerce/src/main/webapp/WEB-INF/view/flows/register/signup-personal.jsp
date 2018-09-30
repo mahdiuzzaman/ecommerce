@@ -2,7 +2,6 @@
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-
 <spring:url var="css" value="/resources/css"></spring:url>
 <spring:url var="images" value="/resources/images"></spring:url>
 <spring:url var="js" value="/resources/js"></spring:url>
@@ -51,54 +50,32 @@
 
 <body>
 
+
 	<div class="wrapper">
-		<!-- Navigation -->
-		<%@include file="./shared/navbar.jsp"%>
+		<!-- navigation -->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" >
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<a class="navbar-brand" href="${flowExecutionUrl}&_eventId=home">Home</a>
+				</div>
+			</div>
+		</nav>
 
 
 
 		<!-- Page Content Home-->
 		<div class="content">
-			<!-- load only when user clicks home-->
-			<c:if test="${userClickHome==true}">
-				<%@include file="home.jsp"%>
-			</c:if>
-
-
-			<!-- load only when user clicks About-->
-			<c:if test="${userClickAbout==true}">
-				<%@include file="about.jsp"%>
-			</c:if>
-
-			<!-- load only when user clicks Contact-->
-			<c:if test="${userClickContact==true}">
-				<%@include file="contact.jsp"%>
-			</c:if>
-
-
-			<!-- load only when user clicks category or all-->
-			<c:if
-				test="${userClickCategoryProducts==true or userClickAllProducts==true}">
-				<%@include file="listProduct.jsp"%>
-			</c:if>
-
-
-			<!-- load only when user clicks view product icon-->
-			<c:if test="${userClickShowProduct==true}">
-				<%@include file="singleProduct.jsp"%>
-			</c:if>
-
-
-			<!-- load only when user clicks view product icon-->
-			<c:if test="${userClickManageProduct==true}">
-				<%@include file="manageProduct.jsp"%>
-			</c:if>
-
-
+			<div class="container">
+				<h3>this will be triggered</h3>
+				<p>hello good people</p>
+			</div>
 
 		</div>
+
+
 		<!-- Footer -->
-		<%@include file="./shared/footer.jsp"%>
+		<%@include file="../../shared/footer.jsp"%>
 
 
 		<!-- jQuery -->

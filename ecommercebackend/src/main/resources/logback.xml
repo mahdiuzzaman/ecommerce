@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- scan="true" in <configuration> tag will reloads configuration file automatically  -->
+<!-- scan="true" reloads configuration automatically -->
 <configuration>
 
 	<appender name="consoleAppender"
