@@ -24,3 +24,8 @@ hs_err_pid*
 
 /ecommerce/target
 /ecommercebackend/target
+.settings/
+.idea/
+target/**
+.classpath
+.project
